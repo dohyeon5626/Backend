@@ -48,3 +48,20 @@ public class testController {
 ![image-20210130014953871](C:\Users\user\AppData\Roaming\Typora\typora-user-images\image-20210130014953871.png)
 
 이렇게 view가 뜨지 않음
+
+### 기타
+
+추가적으로 다시 url을 매핑하고 싶은 순간이 생길 수 있음, 그 경우는 redirect를 이용하여 매핑함
+
+```java
+@RequestMapping("test")
+	public class test{
+	@RequestMapping("hello")
+	public String hello(){
+    	return "redirect:world"; // world라는 링크로 매핑이 됨
+	}
+	@RequestMapping("world") // 여기로 매핑이 됨
+	public String world(){ ... }
+}
+```
+
