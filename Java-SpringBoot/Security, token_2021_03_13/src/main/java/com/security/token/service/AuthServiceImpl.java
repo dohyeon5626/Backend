@@ -22,7 +22,7 @@ public class AuthServiceImpl implements AuthService{
         UserDetails userDetails = userDetailsService.loadUserByUsername(tokenRequest.getId()); // 아이디에 알맞는 객체를 불러옴
         System.out.println("userDetails End");
 
-        if(!tokenRequest.getPassword().equals(userDetails.getPassword())) { // 불러온 객체와 비밀번호가 맞는지 확인
+        if(!tokenRequest.getPassword().equals(userDetails.getPassword())) { // 불러온 객체와 비밀번호가 맞는지 확인 (아직 비밀번호 암호화 안함)
             throw new InvalidTokenException();
         }
         System.out.println("passwordPass");

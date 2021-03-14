@@ -10,11 +10,11 @@ import java.util.Collection;
 
 @Setter
 public class CustomUserDetails implements UserDetails {
-    private String ID;
-    private String PASSWORD;
-    private String NAME;
-    private String AUTHORITY;
-    private boolean ENABLED;
+    private String ID; // 아이디
+    private String PASSWORD; // 비밀번호
+    private String NAME; // 이름
+    private String AUTHORITY; // 권한
+    private boolean ENABLED; // 활성화
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
