@@ -1,5 +1,6 @@
 package com.security.token.userDetails;
 
+import lombok.Builder;
 import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -8,6 +9,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.ArrayList;
 import java.util.Collection;
 
+@Builder
 @Setter
 public class CustomUserDetails implements UserDetails {
     private String ID; // 아이디
