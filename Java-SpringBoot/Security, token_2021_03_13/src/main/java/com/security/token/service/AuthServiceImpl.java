@@ -42,6 +42,8 @@ public class AuthServiceImpl implements AuthService{
 
     @Override
     public void signUp(SignUpRequest signUpRequest){ // 유저 회원가입
+        userRepository.findById(signUpRequest.getId())
+                .ifPresent(user -> {throw new InvalidTokenException();}); // 유저의 없을 경우 예외 처리
         User user = User.builder() // 빌더로 값 넣어서 생성
                 .ID(signUpRequest.getId())
                 .NAME(signUpRequest.getName())

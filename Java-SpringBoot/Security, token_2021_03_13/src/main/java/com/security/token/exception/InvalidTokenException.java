@@ -1,5 +1,7 @@
 package com.security.token.exception;
 
+import com.security.token.dto.entity.User;
+import lombok.NoArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
